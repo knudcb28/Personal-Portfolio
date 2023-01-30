@@ -59,8 +59,8 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <h2 className="py-2">Name Here</h2>
-                <p>Front-End Developer</p>
+                <h2 className="py-2">Chris Knudsvig</h2>
+                <p>Front-End Javascript Developer</p>
                 <p className="py-4">
                   I am available for full-time or part-time positions. Contact
                   me and let's talk.
