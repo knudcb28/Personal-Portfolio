@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Main = () => {
   return (
-    <div id="main" className="w-full h-screen text-center ">
+    <div id="main" className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
           <p className="upppercase text-sm tracking-widest text-gray-600">
@@ -25,22 +25,22 @@ const Main = () => {
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
             <Link href="https://www.linkedin.com/in/christopher-knudsvig-55510bb4/">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300, active:scale-95 transition duration-150">
                 <FaLinkedinIn />
               </div>
             </Link>
             <Link href="https://github.com/knudcb28">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
                 <FaGithub />
               </div>
             </Link>
             <Link href="mailto:knudcb28.com">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
                 <AiOutlineMail />
               </div>
             </Link>
-            <Link href="/">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+            <Link href="https://drive.google.com/file/d/1ALOP7wTR2PcJowK4XpBz0adt3y6cuqn1/view?usp=sharing">
+              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
                 <BsFillPersonLinesFill />
               </div>
             </Link>

@@ -5,6 +5,7 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import navLogo from "../public/assets/navLogo.png";
+import navLogo2 from "../public/assets/navLogo.svg";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
@@ -16,10 +17,10 @@ const Navbar = () => {
 
   useEffect(() => {
     if (
-      router.asPath === '/crownclothing' ||
-      router.asPath === '/facerecognition' ||
-      router.asPath === '/monstersrolodex' ||
-      router.asPath === '/particlegenerator'
+      router.asPath === "/crownclothing" ||
+      router.asPath === "/facerecognition" ||
+      router.asPath === "/monstersrolodex" ||
+      router.asPath === "/particlegenerator"
     ) {
       setNavBg("transparent");
       setLinkColor("#ecf0f3");
@@ -53,26 +54,26 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/#main" scroll={false}>
-          <Image src={navLogo} alt="navlogo" width="60" height="auto" />
+          <Image src={navLogo2} alt="navlogo" width="60" height="auto" />
         </Link>
         <div>
           <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
             <Link href="/#main" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
+              <li className="ml-10 text-sm uppercase hover:shadow-xl">Home</li>
             </Link>
             <Link href="/#about" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">About</li>
+              <li className="ml-10 text-sm uppercase hover:shadow-xl">About</li>
             </Link>
             <Link href="/#skills" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
+              <li className="ml-10 text-sm uppercase hover:shadow-xl">Skills</li>
             </Link>
             <Link href="/#projects" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">
+              <li className="ml-10 text-sm uppercase hover:shadow-xl">
                 Projects
               </li>
             </Link>
             <Link href="/#contact" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">
+              <li className="ml-10 text-sm uppercase hover:shadow-xl">
                 Contact
               </li>
             </Link>

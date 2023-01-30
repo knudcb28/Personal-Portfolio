@@ -3,12 +3,13 @@ import Image from "next/image";
 import faceappLogo from "../public/assets/projects/faceapp.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const facerecognition = () => {
   return (
     <div className="w-full">
       <div className="w-screen h-[30vh] lg:h-[40vh] relative overflow:hidden">
-        <div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/80 z-10" />
+        <div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/50 z-10" />
         <Image
           className="absolute z-1"
           layout="fill"
@@ -23,19 +24,32 @@ const facerecognition = () => {
       </div>
       <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8">
         <div className="col-span-4">
-          <p>Project</p>
-          <h2>Overview</h2>
-          <p>
-            This app was built using React JS and is hosted on Firebase. Users
-            are able to upload any URL and if there is a human face present,
-            this app will be able to detect the face and draw a border around
-            the it. This app also has user ranking functionality based on usage.
-            User authentication is provided so you can register and signin to
-            your account with your email address and password. This is made
-            possible with the Clarifai API.
+          <h2>Project Overview</h2>
+          <p className="mt-4">
+            I wanted to create a project to test my ability use REST API's like
+            Clarifai. This project was also one of my first React apps, and
+            included many learning opportunites, including how to debug code,
+            integrate with an older, outdated API, refactor code to make it more
+            readable and object destructuring in ES6.
           </p>
-          <button className="px-8 py-2 mt-4 mr-8">Demo</button>
-          <button className="px-8 py-2 mt-4">Code</button>
+          <p className="mt-4">
+            This app was built using React JS and Google Firebase. Users are
+            able to sign in or register, then upload any image URL to the app.
+            If there is a human face present, the Clarifai API will be able to
+            detect the face and draw a border around the it. This app also has a
+            built in user ranking functionality depending on how many times the
+            user uses the app. User authentication is provided so you can
+            register and signin to your account with your email address and
+            password. This is made possible with the Clarifai API.
+          </p>
+          <div className="mt-4">
+            <Link href="https://this-face-detection44559-984.herokuapp.com/">
+              <button className="px-8 py-2 mt-5 mr-6">Demo</button>
+            </Link>
+            <Link href="https://github.com/knudcb28/Face-Recognition-Front-End">
+              <button className="px-8 py-2 mt-5">Code</button>
+            </Link>
+          </div>
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">
           <div className="p-2">
@@ -65,7 +79,13 @@ const facerecognition = () => {
           </div>
         </div>
         <Link href="/#projects" scroll={false}>
-          <p className="underline cursor-pointer">Back</p>
+          <div className="flex">
+            <p className="underline cursor-pointer">
+              {" "}
+              <AiOutlineArrowLeft size={20} className="mt-[2px]" />
+            </p>
+            <p className="ml-2 underline">Back</p>
+          </div>
         </Link>
       </div>
     </div>

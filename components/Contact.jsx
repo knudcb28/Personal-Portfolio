@@ -6,10 +6,42 @@ import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from "next/link";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+import { send } from "emailjs-com";
+import { useState } from "react";
+
 
 const Contact = () => {
+
+  const [toSend, setToSend] = useState({
+    from_name: '',
+    to_name: '',
+    message: '',
+    reply_to: '',
+  })
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    send(
+      'service_qhzxckn',
+      'template_3qgk2nm',
+       toSend,
+       'qZtETgJdHLsdWVDp9'
+    )
+    .then((response) => {
+      console.log('SUCCESS!, response.status, response.text')
+    })
+    .catch((err) => {
+      console.log('FAILED...', err)
+    })
+  }
+
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value })
+  }
+
+
   return (
-    <div id="contact" className="w-full lg:h-screen mt-28">
+    <div id="contact" className="w-full lg:h-screen flex items-center">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Contact
@@ -37,18 +69,26 @@ const Contact = () => {
               <div>
                 <p className="uppercase pt-8">Connect With Me</p>
                 <div className="flex items-center justify-between py-4">
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <FaLinkedinIn />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <FaGithub />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <AiOutlineMail />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <BsFillPersonLinesFill />
-                  </div>
+                <Link href="https://www.linkedin.com/in/christopher-knudsvig-55510bb4/">
+              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300, active:scale-95 transition duration-150">
+                <FaLinkedinIn />
+              </div>
+            </Link>
+            <Link href="https://github.com/knudcb28">
+              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
+                <FaGithub />
+              </div>
+            </Link>
+            <Link href="mailto:knudcb28.com">
+              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
+                <AiOutlineMail />
+              </div>
+            </Link>
+            <Link href="https://drive.google.com/file/d/1ALOP7wTR2PcJowK4XpBz0adt3y6cuqn1/view?usp=sharing">
+              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
+                <BsFillPersonLinesFill />
+              </div>
+            </Link>
                 </div>
               </div>
             </div>
@@ -57,12 +97,15 @@ const Contact = () => {
           {/* Right */}
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form>
+              <form onSubmit={onSubmit}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">Name</label>
                     <input
                       type="text"
+                      name="from_name"
+                      value={toSend.from_name}
+                      onChange={handleChange}
                       className="border-2 rounded-lg p-3 flex border-gray-300"
                     ></input>
                   </div>
@@ -81,6 +124,9 @@ const Contact = () => {
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
+                    name='reply_to'
+                    value={toSend.reply_to}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="flex flex-col py-2">
@@ -92,9 +138,9 @@ const Contact = () => {
                 </div>
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Message</label>
-                  <textarea className="border-2 rounded-lg p-3 border-gray-300" rows={10}></textarea>
+                  <textarea name="message" value={toSend.message} onChange={handleChange} className="border-2 rounded-lg p-3 border-gray-300" rows={10}></textarea>
                 </div>
-                <button className="w-full mt-5 p-4 text-gray-100">Send Message</button>
+                <button type="submit" className="w-full mt-5 p-4 bg-[#5651e5] text-gray-100">Send Message</button>
               </form>
             </div>
           </div>
