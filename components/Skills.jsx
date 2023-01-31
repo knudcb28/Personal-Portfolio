@@ -9,6 +9,9 @@ import nextLogo from "../public/assets/skills/nextjs.png";
 import nodeLogo from "../public/assets/skills/node.png";
 import reactLogo from "../public/assets/skills/react.png";
 import tailwindLogo from "../public/assets/skills/tailwind.png";
+import amazonLogo from "../public/assets/skills/aws.png"
+import mongoLogo from "../public/assets/skills/mongo.png"
+import shopifyLogo from "../public/assets/skills/shopify.png"
 
 const Skills = () => {
   return (
@@ -106,6 +109,36 @@ const Skills = () => {
               </div>
               <div className="flex flex-col items-center justify-center">
                 <h3>Tailwind</h3>
+              </div>
+            </div>
+          </div>
+          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
+            <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="m-auto">
+                <Image src={mongoLogo} width={64} height={64} alt="/" />
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <h3>Mongo</h3>
+              </div>
+            </div>
+          </div>
+          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
+            <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="m-auto">
+                <Image src={shopifyLogo} width={64} height={64} alt="/" />
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <h3>Shopify</h3>
+              </div>
+            </div>
+          </div>
+          <div className="p-6 shadow-xl rounded-xl hover:scale-105 ease-in duration-300">
+            <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="m-auto">
+                <Image src={amazonLogo} width={64} height={64} alt="/" />
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <h3>AWS</h3>
               </div>
             </div>
           </div>
