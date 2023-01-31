@@ -36,3 +36,26 @@ html {
     @apply hover:shadow-xl active:scale-90 transition duration-200 ease-in rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white;
   }
 }
+
+.logo {
+  --s: 60px;   /* the size of the image */
+  --b: 4px;     /* the border thickness*/
+  --g: 4px;    /* the gap */
+  --c: #5651e5; /* the color */
+  
+  width: var(--s);
+  aspect-ratio: 1;
+  outline: calc(var(--s)/2) solid #0000;
+  outline-offset: calc(var(--s)/-3);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.logo:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
+}
+
+.logo + .logo {
+  border-radius: 50%;
+}
+
