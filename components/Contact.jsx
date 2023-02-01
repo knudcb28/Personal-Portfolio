@@ -10,14 +10,18 @@ import { send } from "emailjs-com";
 import { useState } from "react";
 
 
-const Contact = () => {
-
-  const [toSend, setToSend] = useState({
+const initialState = {
     from_name: '',
     to_name: '',
     message: '',
     reply_to: '',
-  })
+    subject: '',
+    phonenumber: '',
+}
+
+const Contact = () => {
+
+  const [toSend, setToSend] = useState(initialState)
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -25,13 +29,16 @@ const Contact = () => {
       'service_qhzxckn',
       'template_3qgk2nm',
        toSend,
-       'qZtETgJdHLsdWVDp9'
+      'qZtETgJdHLsdWVDp9'
     )
     .then((response) => {
-      console.log('SUCCESS!, response.status, response.text')
+      console.log('SUCCESS!', response.status, response.text)
+      alert("Message successfully sent!")
+      setToSend(initialState)
     })
     .catch((err) => {
       console.log('FAILED...', err)
+      alert("Message was unable to send")
     })
   }
 
@@ -97,7 +104,7 @@ const Contact = () => {
           {/* Right */}
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form onSubmit={onSubmit}>
+              <form id="emailForm" onSubmit={onSubmit} >
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">Name</label>
@@ -116,6 +123,9 @@ const Contact = () => {
                     <input
                       type="text"
                       className="border-2 rounded-lg p-3 flex border-gray-300"
+                      name="phonenumber"
+                      value={toSend.phonenumber}
+                      onChange={handleChange}
                     ></input>
                   </div>
                 </div>
@@ -132,6 +142,9 @@ const Contact = () => {
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Subject</label>
                   <input
+                    name='subject'
+                    value={toSend.subject}
+                    onChange={handleChange}
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
                   />
