@@ -19,8 +19,8 @@ const Navbar = () => {
     if (
       router.asPath === "/crownclothing" ||
       router.asPath === "/facerecognition" ||
-      router.asPath === "/monstersrolodex" ||
-      router.asPath === "/particlegenerator"
+      router.asPath === "/coffeeconnoisseur" ||
+      router.asPath === "/airbnb"
     ) {
       setNavBg("transparent");
       setLinkColor("#ecf0f3");
