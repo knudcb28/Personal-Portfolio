@@ -117,6 +117,7 @@ const Contact = () => {
                       value={toSend.from_name}
                       onChange={handleChange}
                       className="border-2 rounded-lg p-3 flex border-gray-300"
+                      required
                     ></input>
                   </div>
                   <div className="flex flex-col">
@@ -140,6 +141,7 @@ const Contact = () => {
                     name="reply_to"
                     value={toSend.reply_to}
                     onChange={handleChange}
+                    required
                   />
                 </div>
                 <div className="flex flex-col py-2">
@@ -150,6 +152,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
+                    required
                   />
                 </div>
                 <div className="flex flex-col py-2">
@@ -160,6 +163,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className="border-2 rounded-lg p-3 border-gray-300"
                     rows={10}
+                    required
                   ></textarea>
                 </div>
                 {loading === "..." ? (
