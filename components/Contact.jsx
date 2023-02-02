@@ -9,43 +9,46 @@ import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import { send } from "emailjs-com";
 import { useState } from "react";
 
-
 const initialState = {
-    from_name: '',
-    to_name: '',
-    message: '',
-    reply_to: '',
-    subject: '',
-    phonenumber: '',
-}
+  from_name: "",
+  to_name: "",
+  message: "",
+  reply_to: "",
+  subject: "",
+  phonenumber: "",
+};
 
 const Contact = () => {
+  const [formResponseMessage, setFormResponseMessage] = useState(undefined);
 
-  const [toSend, setToSend] = useState(initialState)
+  const [toSend, setToSend] = useState(initialState);
+  const [loading, setLoading] = useState("Send Message");
 
   const onSubmit = (e) => {
+    setFormResponseMessage(undefined);
+    setLoading(<div class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>);
     e.preventDefault();
-    send(
-      'service_qhzxckn',
-      'template_3qgk2nm',
-       toSend,
-      'qZtETgJdHLsdWVDp9'
-    )
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text)
-      alert("Message successfully sent!")
-      setToSend(initialState)
-    })
-    .catch((err) => {
-      console.log('FAILED...', err)
-      alert("Message was unable to send")
-    })
-  }
+    send("service_qhzxckn", "template_3qgk2nm", toSend, "qZtETgJdHLsdWVDp9")
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        setFormResponseMessage("Your message has been successfully sent!");
+        setToSend(initialState);
+        setLoading("Send Message");
+      })
+      .catch((err) => {
+        console.log("FAILED...", err);
+        setFormResponseMessage("Message was unable to send...");
+        setLoading("Send Message");
+      });
+  };
 
   const handleChange = (e) => {
-    setToSend({ ...toSend, [e.target.name]: e.target.value })
-  }
-
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
 
   return (
     <div id="contact" className="w-full lg:h-screen flex items-center">
@@ -66,9 +69,9 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <h2 className="py-2">Chris Knudsvig</h2>
-                <p>Front-End Javascript Developer</p>
-                <p className="py-4">
+                <h2 className="py-2 pt-8">Chris Knudsvig</h2>
+                <p className="">Front-End Javascript Developer</p>
+                <p className="py-4 pt-8">
                   I am available for full-time or part-time positions. Contact
                   me and let's talk.
                 </p>
@@ -76,26 +79,26 @@ const Contact = () => {
               <div>
                 <p className="uppercase pt-8">Connect With Me</p>
                 <div className="flex items-center justify-between py-4">
-                <Link href="https://www.linkedin.com/in/christopher-knudsvig-55510bb4/">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300, active:scale-95 transition duration-150">
-                <FaLinkedinIn />
-              </div>
-            </Link>
-            <Link href="https://github.com/knudcb28">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
-                <FaGithub />
-              </div>
-            </Link>
-            <Link href="mailto:knudcb28.com">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
-                <AiOutlineMail />
-              </div>
-            </Link>
-            <Link href="https://drive.google.com/file/d/1ALOP7wTR2PcJowK4XpBz0adt3y6cuqn1/view?usp=sharing">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
-                <BsFillPersonLinesFill />
-              </div>
-            </Link>
+                  <Link href="https://www.linkedin.com/in/christopher-knudsvig-55510bb4/">
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-105 ease-in duration-300, active:scale-95 transition duration-150">
+                      <FaLinkedinIn />
+                    </div>
+                  </Link>
+                  <Link href="https://github.com/knudcb28">
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
+                      <FaGithub />
+                    </div>
+                  </Link>
+                  <Link href="mailto:knudcb28.com">
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
+                      <AiOutlineMail />
+                    </div>
+                  </Link>
+                  <Link href="https://drive.google.com/file/d/1ALOP7wTR2PcJowK4XpBz0adt3y6cuqn1/view?usp=sharing">
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300, active:scale-95 transition duration-150">
+                      <BsFillPersonLinesFill />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -104,7 +107,7 @@ const Contact = () => {
           {/* Right */}
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form id="emailForm" onSubmit={onSubmit} >
+              <form id="emailForm" onSubmit={onSubmit}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">Name</label>
@@ -134,7 +137,7 @@ const Contact = () => {
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="email"
-                    name='reply_to'
+                    name="reply_to"
                     value={toSend.reply_to}
                     onChange={handleChange}
                   />
@@ -142,7 +145,7 @@ const Contact = () => {
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Subject</label>
                   <input
-                    name='subject'
+                    name="subject"
                     value={toSend.subject}
                     onChange={handleChange}
                     className="border-2 rounded-lg p-3 flex border-gray-300"
@@ -151,20 +154,54 @@ const Contact = () => {
                 </div>
                 <div className="flex flex-col py-2">
                   <label className="uppercase text-sm py-2">Message</label>
-                  <textarea name="message" value={toSend.message} onChange={handleChange} className="border-2 rounded-lg p-3 border-gray-300" rows={10}></textarea>
+                  <textarea
+                    name="message"
+                    value={toSend.message}
+                    onChange={handleChange}
+                    className="border-2 rounded-lg p-3 border-gray-300"
+                    rows={10}
+                  ></textarea>
                 </div>
-                <button type="submit" className="w-full mt-5 p-4 bg-[#5651e5] text-gray-100">Send Message</button>
+                {loading === "..." ? (
+                  <button
+                    type="text"
+                    className="w-full mt-8 p-4 bg-[#5651e5] cursor-pointer ease-in duration-300, active:scale-95 transition duration-150"
+                  >
+                    {loading}
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    className="w-full mt-8 p-4 bg-[#5651e5] cursor-pointer ease-in duration-300, active:scale-95 transition duration-150"
+                  >
+                    {loading}
+                  </button>
+                )}
+                <div className="flex justify-center">
+                  {formResponseMessage ===
+                  "Your message has been successfully sent!" ? (
+    
+                      <p className="text-[#32D190] text-lg font-bold uppercase mt-4 transition-opacity ease-in duration-[3000ms] opacity-0 ">
+                        {formResponseMessage}
+                      </p>
+                    
+                  ) : (
+                    <p className="text-red-400 text-lg font-bold uppercase mt-4">
+                      {formResponseMessage}
+                    </p>
+                  )}
+                </div>
               </form>
             </div>
           </div>
         </div>
-       <div className="flex justify-center py-12">
-        <Link href="#main" scroll={false}>
+        <div className="flex justify-center py-12">
+          <Link href="#main" scroll={false}>
             <div className="rounded-full shadow-lg shadow-gray-400 mt-4 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-                <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30}/>
+              <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
             </div>
-        </Link>
-       </div> 
+          </Link>
+        </div>
       </div>
     </div>
   );
