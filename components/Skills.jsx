@@ -15,8 +15,8 @@ import shopifyLogo from "../public/assets/skills/shopify.png"
 
 const Skills = () => {
   return (
-    <div id="skills" className="w-full lg:h-screen p-2">
-      <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
+    <div id="skills" className="w-full sm:h-screen pt-[4rem] lg:h-screen p-2">
+      <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full ">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Skills
         </p>
