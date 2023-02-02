@@ -26,11 +26,13 @@ const Contact = () => {
 
   const onSubmit = (e) => {
     setFormResponseMessage(undefined);
-    setLoading(<div class="spinner">
-    <div class="bounce1"></div>
-    <div class="bounce2"></div>
-    <div class="bounce3"></div>
-  </div>);
+    setLoading(
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    );
     e.preventDefault();
     send("service_qhzxckn", "template_3qgk2nm", toSend, "qZtETgJdHLsdWVDp9")
       .then((response) => {
@@ -184,11 +186,9 @@ const Contact = () => {
                 <div className="flex justify-center">
                   {formResponseMessage ===
                   "Your message has been successfully sent!" ? (
-    
-                      <p className="text-[#32D190] text-lg font-bold uppercase mt-4 transition-opacity ease-in duration-[3000ms] opacity-0 ">
-                        {formResponseMessage}
-                      </p>
-                    
+                    <p className="text-[#32D190] text-lg font-bold uppercase mt-4 transition-opacity ease-in duration-[3000ms] opacity-0 ">
+                      {formResponseMessage}
+                    </p>
                   ) : (
                     <p className="text-red-400 text-lg font-bold uppercase mt-4">
                       {formResponseMessage}
