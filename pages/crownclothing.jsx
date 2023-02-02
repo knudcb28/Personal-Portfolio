@@ -46,7 +46,7 @@ const crownclothing = () => {
           <Link href="https://boisterous-frangipane-b69b15.netlify.app/">
             <button className="px-8 py-2 mt-4 mr-6">Demo</button>
           </Link>
-          <Link href="">
+          <Link href="https://github.com/knudcb28/Crown-Clothing">
             <button className="px-8 py-2 mt-4">Code</button>
           </Link>
           </div>
