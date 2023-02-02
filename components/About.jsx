@@ -39,7 +39,9 @@ const About = () => {
           </Link>
         </div>
         <div className="w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300">
-          <Image className="rounded-xl" src={aboutLogo} alt="/" />
+          <Link href="https://drive.google.com/file/d/1ALOP7wTR2PcJowK4XpBz0adt3y6cuqn1/view?usp=sharing">
+            <Image className="rounded-xl cursor-pointer" src={aboutLogo} alt="/" />
+          </Link>
         </div>
       </div>
     </div>
