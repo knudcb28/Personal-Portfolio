@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import particleLogo from "../public/assets/projects/particles.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import airbnbLogo from "../public/assets/projects/airbnb.png";
 import Link from "next/link";

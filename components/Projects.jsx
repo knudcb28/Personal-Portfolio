@@ -1,8 +1,8 @@
 import React from "react";
-import faceappLogo from "../public/assets/projects/faceapp.png";
 import crownLogo from "../public/assets/projects/crwnclothing.png";
 import coffeeLogo from "../public/assets/projects/coffeeconnoisseur.png";
 import airbnbLogo from "../public/assets/projects/airbnb.png";
+import metaLogo from "../public/assets/projects/metamessenger.png"
 import ProjectItem from "./ProjectItem";
 
 const Projects = () => {
@@ -16,10 +16,10 @@ const Projects = () => {
           <h2 className="py-4">What I've Built</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ProjectItem
-              title="Face Recognition App"
-              backgroundImg={faceappLogo}
-              projectUrl="/facerecognition"
-              technology="React JS | Firebase"
+              title="Meta Messenger"
+              backgroundImg={metaLogo}
+              projectUrl="/metamessenger"
+              technology="Next JS | Upstash"
             />
             <ProjectItem
               title="Crown Clothing"
