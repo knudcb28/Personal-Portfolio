@@ -26,29 +26,30 @@ const crownclothing = () => {
         <div className="col-span-4">
           <h2>Project Overview</h2>
           <p className="mt-4">
-            I wanted to see if I could recreate the functionality and experience
-            of most e-commerce sites when building this site. This provided me
-            with many learning opportunities, such as how to use React hooks
-            like useState and useEffect, along with routing in react app. I also
-            learned the value in using styling components to avoid repetition of
-            css class names. It was also one of my first introductions to
-            working with JSON data and manipulating arrays in objects using
-            methods like .map()
+            I enjoy shopping so I wanted to see if I could recreate the
+            functionality and experience of popular e-commerce sites. The build
+            of this site provided me with many learning opportunities, such as
+            how to use React hooks like useState and useEffect, along with
+            routing. I utilized styled components in this app in order to to
+            avoid the repetition of using css class names. It was also a great
+            opportunity practice working with JSON data and manipulating arrays
+            in objects using methods like .map() to map through components and
+            display relevant information to the user.
           </p>
           <p className="mt-4">
-            This app was built using React JS and is hosted on Firebase. This
+            This app was built using React JS and Google Firebase. This
             app acts as a fully-functional e-commerce site complete with Google
-            Authentication, and dynamic outing. Users can view various
-            categories of clothing items, select and edit items to their cart,
+            Authentication, and dynamic routing. Users can view various
+            categories of clothing items, add items to their cart,
             update their cart and checkout.
           </p>
           <div className="mt-2">
-          <Link href="https://boisterous-frangipane-b69b15.netlify.app/">
-            <button className="px-8 py-2 mt-4 mr-6">Demo</button>
-          </Link>
-          <Link href="https://github.com/knudcb28/Crown-Clothing">
-            <button className="px-8 py-2 mt-4">Code</button>
-          </Link>
+            <Link href="https://boisterous-frangipane-b69b15.netlify.app/">
+              <button className="px-8 py-2 mt-4 mr-6">Demo</button>
+            </Link>
+            <Link href="https://github.com/knudcb28/Crown-Clothing">
+              <button className="px-8 py-2 mt-4">Code</button>
+            </Link>
           </div>
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">
