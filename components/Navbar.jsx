@@ -150,7 +150,7 @@ const Navbar = () => {
                     <AiOutlineMail />
                   </div>
                 </Link>
-                <Link href="https://drive.google.com/file/d/1ALOP7wTR2PcJowK4XpBz0adt3y6cuqn1/view?usp=sharing">
+                <Link href="https://docs.google.com/document/d/15X1ZJg1sQtjwTDF8BCfrHWnjyDWRZ6Gc/edit?usp=sharing&ouid=106349336800798633362&rtpof=true&sd=true">
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
                     <BsFillPersonLinesFill />
                   </div>
