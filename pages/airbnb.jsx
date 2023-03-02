@@ -38,7 +38,7 @@ const airbnb = () => {
             This app was built using Next JS and MapBox API. The user can search for a location and select a date range to book a stay for locations. The app will also display information to the user about various places they can stay, along with price information and a map with nearby locations of interest. 
           </p>
           <div className="mt-4">
-            <Link href="https://airbnb-2-0-chi.vercel.app/">
+            <Link href="https://vacation-clone-903284-knudcb28.vercel.app/">
               <button className="px-8 py-2 mt-5 mr-6">Demo</button>
             </Link>
             <Link href="https://github.com/knudcb28/Airbnb-2.0">
