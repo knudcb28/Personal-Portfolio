@@ -53,8 +53,8 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="w-full lg:h-screen flex items-center pt-[3rem] mt-[16rem]">
-      <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
+    <div id="contact" className="pt-[9rem]">
+      <div className="">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Contact
         </p>
@@ -199,6 +199,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
         <div className="flex justify-center py-12">
           <Link href="#main" scroll={false}>
             <div className="rounded-full shadow-lg shadow-gray-400 mt-4 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
