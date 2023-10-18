@@ -53,8 +53,8 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="pt-[9rem]">
-      <div className="">
+    <div id="contact" className="py-[9rem]">
+      <div className="max-w-[1240px] mx-auto">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Contact
         </p>

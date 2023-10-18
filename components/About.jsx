@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div id="about" className="pt-[9rem]">
-      <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
+    <div id="about" className="py-[9rem]">
+      <div className="max-w-[1240px] mx-auto md:grid grid-cols-3 gap-8">
         <div className="col-span-2">
           <p className="uppercase text-xl tracking-widest text-[#5651e5]">
             About
